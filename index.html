@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos palindromos</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body>
+    <h1>Quieres saber si una frase es un palíndromo</h1>
+    <form>
+        <p><label for="palindromo">Introduce una frase (veremos si es un palíndromo): </label></p>
+        <p><input type="text" id="palindromo" required></p>
+        <p><button type="button" onclick="verificar()">Continuar</button></p>
+        <p id="reverse"><b>Tu texto al reves</b></p>
+        <p id="respuesta"></p>
+    </form>
+    <br>
+    <div class="posicion">
+        <img src="./img/palindromo.jpg" alt="foto">
+    </div>
+    <script>
+
+        function verificar() {
+            let entrada = document.getElementById("palindromo").value;
+            let textoLimpio = limpiarTexto(entrada);
+            let invertido = textoLimpio.split('').reverse().join('');
+            let esPalindromo = (textoLimpio === invertido);
+
+            //mostrar al revés document.getElementById("textoInvertido").textContent = entrada.split('').reverse().join('');
+
+            //leer texto al revés
+            document.getElementById("reverse").innerHTML = `<b>Tu texto al reves: <b> ${entrada.split('').reverse().join('')}`;
+
+            console.log("Texto original:", entrada);
+            console.log("Texto limpio:", textoLimpio);
+            console.log("Texto invertido:", invertido);
+            // Mostrar el resultado
+            
+            const respuesta = document.getElementById("respuesta");
+            if (esPalindromo) {
+                respuesta.style.color = "blue";
+                respuesta.style.fontWeight = "bold";
+                respuesta.style.fontStyle = "oblique";
+                respuesta.style.fontFamily = "Nunito";
+                respuesta.innerHTML = "Tu texto ES un palíndromo";
+            } else {
+                respuesta.style.color = "red";
+                respuesta.style.fontWeight = "bold";
+                respuesta.style.fontStyle = "oblique";
+                respuesta.style.fontFamily = "Nunito";
+                respuesta.innerHTML = "Tu texto NO es un palíndromo";
+            }
+
+            console.log(respuesta);
+        }
+    </script>
+    <script src="./js/clearText.js"></script>
+
+</body>
+
+</html>

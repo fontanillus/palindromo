@@ -1,0 +1,29 @@
+body {
+    width: 80%;
+    height: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(215, 240, 244);
+    margin: 0 auto;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    border: 5px solid rgb(27, 239, 243);
+    padding-left: 10px;
+    background-color: rgb(194, 233, 239);
+
+}
+
+input {
+    padding-right: 50%;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.posicion {
+text-align: center;
+}
